@@ -1,0 +1,296 @@
+openapi: 3.0.3
+info:
+  title: Odoo REST API
+  version: "1.0.0"
+  description: |
+    Secure REST API for Odoo 18.x to allow external apps to CRUD and query Odoo models.
+    🔐 Bearer Token Auth required for most endpoints.
+
+servers:
+  - url: http://localhost:8071
+
+# security:
+#   - bearerAuth: []
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  parameters:
+    BearerTokenHeader:
+      name: Authorization
+      in: header
+      required: true
+      schema:
+        type: string
+        example: Bearer YOUR_TOKEN_HERE
+
+  schemas:
+    ApiResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          example: true
+        code:
+          type: integer
+          example: 200
+        message:
+          type: string
+          example: Operation successful
+        data:
+          type: object
+
+paths:
+  /api/login:
+    post:
+      summary: Login to receive a bearer token
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [db, email, password]
+              properties:
+                db:
+                  type: string
+                  example: odoo_db
+                email:
+                  type: string
+                  example: admin@example.com
+                password:
+                  type: string
+                  example: admin
+      responses:
+        '200':
+          description: Successful login
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+
+
+  /api/{model}/{id}:
+    get:
+      summary: Get a single record
+      parameters:
+        - in: path
+          name: model
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Record found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+      security:
+        - bearerAuth: []
+
+
+    put:
+      summary: Update a record
+      parameters:
+        - in: path
+          name: model
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [data]
+              properties:
+                data:
+                  type: object
+                  example:
+                    name: "Updated Name"
+      responses:
+        '200':
+          description: Record updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+      security:
+        - bearerAuth: []
+
+  /api/{model}/{id}/delete:
+    delete:
+      summary: Delete a record
+      parameters:
+        - in: path
+          name: model
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Record deleted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+      security:
+        - bearerAuth: []
+
+  /api/{model}/search:
+    post:
+      summary: Search records
+      parameters:
+        - in: path
+          name: model
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                domain:
+                  type: array
+                  items:
+                    type: array
+                    items:
+                      type: string
+                  example: [["type", "=", "consu"]]
+                limit:
+                  type: integer
+                  example: 5
+                order_by:
+                  type: string
+                  example: "create_date desc"
+                fields:
+                  type: array
+                  items:
+                    type: string
+                  example: ["id", "name", "type"]
+      responses:
+        '200':
+          description: List of records
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+      security:
+        - bearerAuth: []
+
+  /api/{model}/create:
+    post:
+      summary: Create a record
+      parameters:
+        - in: path
+          name: model
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [data]
+              properties:
+                data:
+                  type: object
+                  example:
+                    name: "Mango Juice"
+                    type: "consu"
+      responses:
+        '200':
+          description: Record created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+      security:
+        - bearerAuth: []
+
+
+  /api/{model}/schema:
+    get:
+      summary: Get model schema
+      parameters:
+        - in: path
+          name: model
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Model schema
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+      security:
+        - bearerAuth: []
+
+  /api/{model}/execute_kw:
+    post:
+      summary: Execute model method
+      parameters:
+        - in: path
+          name: model
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [method, args]
+              properties:
+                method:
+                  type: string
+                  example: search_read
+                args:
+                  type: array
+                  items:
+                    type: array
+                    items:
+                      type: string
+                  example: [["is_company", "=", true]]
+                kwargs:
+                  type: object
+                  example:
+                    fields: ["name", "email"]
+      responses:
+        '200':
+          description: Method result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+      security:
+        - bearerAuth: []
