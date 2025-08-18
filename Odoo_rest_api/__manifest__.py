@@ -29,8 +29,7 @@
     'installable': True,
     'application': True,
     'images': [
-        'static/description/icon.png',
-        'static/description/swagger_screenshot.png',
+        'static/description/banner.png',
     ],
     'maintainer': 'Micra digital',
     'price': 29.99,
