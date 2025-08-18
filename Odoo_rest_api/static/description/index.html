@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Odoo 18 REST API Module</title>
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f8f9fa;">
+
+<!-- HEADER SECTION -->
+<section style="max-width: 900px; margin: 0 auto; padding: 20px;">
+  <div style="margin-bottom: 30px; padding: 15px 0;">
+    <h2 style="color:#875A7B; font-size: 32px; margin-bottom: 20px; text-align: center;">Odoo 18 REST API Module</h2>
+    <h3 style="font-size: 22px; margin-bottom: 30px; text-align: center;">Powerful JSON-RPC Integration for Odoo 18</h3>
+  </div>
+</section>
+
+<!-- INTRODUCTION SECTION -->
+<section style="max-width: 900px; margin: 0 auto; padding: 20px; background-color: #f5f5f5;">
+  <div style="margin-bottom: 30px; padding: 15px 0;">
+    <div style="width: 100%;">
+      <p style="text-align: center; font-size: 16px; line-height: 1.6; margin-bottom: 25px;">
+        The <strong>Odoo 18 REST API Module</strong> provides a comprehensive RESTful interface designed specifically for Odoo 18 using <strong>JSON-RPC</strong>. 
+        Built to leverage Odoo 18's latest features, it enables secure integration with external systems, 
+        mobile apps, and third-party services while maintaining Odoo's security model.
+      </p>
+      <div style="background-color: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 30px 0; text-align: center; border-radius: 0 4px 4px 0;">
+        <strong style="font-size: 16px;">🚀 Performance Note:</strong> Optimized specifically for Odoo 18's architecture, 
+        the module adds minimal overhead with API response times averaging under 100ms for most operations.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KEY FEATURES SECTION -->
+<section style="max-width: 900px; margin: 0 auto; padding: 20px;">
+  <div style="margin-bottom: 30px; padding: 15px 0;">
+    <h2 style="color:#875A7B; margin-bottom: 35px; text-align: center;">Key Features</h2>
+    
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin: 30px 0;">
+      <!-- Odoo 18 Exclusive -->
+      <div style="background: white; border-radius: 8px; padding: 25px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+        <div style="font-size: 36px; color: #875a7b; margin-bottom: 15px;">★</div>
+        <h3 style="font-size: 18px; color: #875a7b; margin-bottom: 15px;">Odoo 18 Exclusive</h3>
+        <p style="color: #555; line-height: 1.5;">Built specifically for Odoo 18's architecture with support for all new features and performance improvements.</p>
+      </div>
+      
+      <!-- Secure Authentication -->
+      <div style="background: white; border-radius: 8px; padding: 25px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+        <div style="font-size: 36px; color: #875a7b; margin-bottom: 15px;">🔒</div>
+        <h3 style="font-size: 18px; color: #875a7b; margin-bottom: 15px;">Secure Authentication</h3>
+        <p style="color: #555; line-height: 1.5;">JWT token-based authentication with user-level permissions and configurable expiration.</p>
+      </div>
+      
+      <!-- Full CRUD Operations -->
+      <div style="background: white; border-radius: 8px; padding: 25px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+        <div style="font-size: 36px; color: #875a7b; margin-bottom: 15px;">🗄️</div>
+        <h3 style="font-size: 18px; color: #875a7b; margin-bottom: 15px;">Full CRUD Operations</h3>
+        <p style="color: #555; line-height: 1.5;">Create, Read, Update, Delete for any Odoo model with comprehensive field support.</p>
+      </div>
+      
+      <!-- Advanced Search -->
+      <div style="background: white; border-radius: 8px; padding: 25px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+        <div style="font-size: 36px; color: #875a7b; margin-bottom: 15px;">🔍</div>
+        <h3 style="font-size: 18px; color: #875a7b; margin-bottom: 15px;">Advanced Search</h3>
+        <p style="color: #555; line-height: 1.5;">Filter records with complex domain filters, sorting, and field selection.</p>
+      </div>
+      
+      <!-- Batch Operations -->
+      <div style="background: white; border-radius: 8px; padding: 25px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+        <div style="font-size: 36px; color: #875a7b; margin-bottom: 15px;">⚙️</div>
+        <h3 style="font-size: 18px; color: #875a7b; margin-bottom: 15px;">Batch Operations</h3>
+        <p style="color: #555; line-height: 1.5;">Perform multiple actions in a single API call for improved efficiency.</p>
+      </div>
+      
+      <!-- Custom Endpoints -->
+      <div style="background: white; border-radius: 8px; padding: 25px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+        <div style="font-size: 36px; color: #875a7b; margin-bottom: 15px;">💻</div>
+        <h3 style="font-size: 18px; color: #875a7b; margin-bottom: 15px;">Custom Endpoints</h3>
+        <p style="color: #555; line-height: 1.5;">Extend the API with your own endpoints for specialized functionality.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TAB SYSTEM SECTION -->
+<section style="max-width: 900px; margin: 0 auto; padding: 20px; background-color: #f5f5f5;">
+  <div style="margin-bottom: 30px; padding: 15px 0;">
+    <h2 style="color:#875A7B; margin-bottom: 35px; text-align: center;">Module Documentation</h2>
+    
+    <div style="width: 100%;">
+      <input id="tab1" type="radio" name="tabs" checked style="display: none;">
+      <input id="tab2" type="radio" name="tabs" style="display: none;">
+      <input id="tab3" type="radio" name="tabs" style="display: none;">
+      <input id="tab4" type="radio" name="tabs" style="display: none;">
+      <input id="tab5" type="radio" name="tabs" style="display: none;">
+      <input id="tab6" type="radio" name="tabs" style="display: none;">
+      
+      
+      <ul style="display: flex; list-style: none; padding: 0; margin: 0 0 20px; border-bottom: 2px solid #ddd; overflow-x: auto; flex-wrap: wrap;">
+        <li style="margin-right: 5px; margin-bottom: 5px;">
+          <label for="tab1" style="display: block; padding: 10px 15px; background: #f7f7f7; border: 1px solid #ddd; border-bottom: none; border-radius: 5px 5px 0 0; cursor: pointer; position: relative; top: 2px; white-space: nowrap;">Overview</label>
+        </li>
+        <li style="margin-right: 5px; margin-bottom: 5px;">
+          <label for="tab2" style="display: block; padding: 10px 15px; background: #f7f7f7; border: 1px solid #ddd; border-bottom: none; border-radius: 5px 5px 0 0; cursor: pointer; position: relative; top: 2px; white-space: nowrap;">Installation</label>
+        </li>
+        <li style="margin-right: 5px; margin-bottom: 5px;">
+          <label for="tab3" style="display: block; padding: 10px 15px; background: #f7f7f7; border: 1px solid #ddd; border-bottom: none; border-radius: 5px 5px 0 0; cursor: pointer; position: relative; top: 2px; white-space: nowrap;">API Docs</label>
+        </li>
+        <li style="margin-right: 5px; margin-bottom: 5px;">
+          <label for="tab4" style="display: block; padding: 10px 15px; background: #f7f7f7; border: 1px solid #ddd; border-bottom: none; border-radius: 5px 5px 0 0; cursor: pointer; position: relative; top: 2px; white-space: nowrap;">Postman</label>
+        </li>
+        <li style="margin-right: 5px; margin-bottom: 5px;">
+          <label for="tab5" style="display: block; padding: 10px 15px; background: #f7f7f7; border: 1px solid #ddd; border-bottom: none; border-radius: 5px 5px 0 0; cursor: pointer; position: relative; top: 2px; white-space: nowrap;">Swagger</label>
+        </li>
+        <li style="margin-right: 5px; margin-bottom: 5px;">
+          <label for="tab6" style="display: block; padding: 10px 15px; background: #f7f7f7; border: 1px solid #ddd; border-bottom: none; border-radius: 5px 5px 0 0; cursor: pointer; position: relative; top: 2px; white-space: nowrap;">Screenshots</label>
+        </li>
+      </ul>
+      
+      <div style="position: relative;">
+        <!-- Overview Tab -->
+        <div id="content1" style="display: block; padding: 20px; border: 1px solid #ddd; border-top: none; background: white; border-radius: 0 0 5px 5px;">
+          <h3 style="color:#875A7B;">Comprehensive REST API for Odoo 18</h3>
+          
+          <div style="background: #e7f4ff; border-left: 4px solid #1e88e5; padding: 15px; margin: 20px 0; border-radius: 0 4px 4px 0;">
+            <strong>🚀 Performance Note:</strong> Optimized specifically for Odoo 18's architecture, 
+            the module adds minimal overhead with API response times averaging under 100ms for most operations.
+          </div>
+          
+          <h4>Key Features:</h4>
+          <ul style="padding-left: 20px;">
+            <li style="margin-bottom: 15px; padding-left: 25px; position: relative;"><strong>Odoo 18 Exclusive</strong> - Built specifically for Odoo 18's architecture</li>
+            <li style="margin-bottom: 15px; padding-left: 25px; position: relative;"><strong>Secure authentication</strong> - JWT token-based authentication with user-level permissions</li>
+            <li style="margin-bottom: 15px; padding-left: 25px; position: relative;"><strong>Full CRUD operations</strong> - Create, Read, Update, Delete for any Odoo model</li>
+            <li style="margin-bottom: 15px; padding-left: 25px; position: relative;"><strong>Advanced search capabilities</strong> - Filter records with complex domain filters</li>
+            <li style="margin-bottom: 15px; padding-left: 25px; position: relative;"><strong>JSON-RPC compliance</strong> - Industry-standard protocol for maximum compatibility</li>
+            <li style="margin-bottom: 15px; padding-left: 25px; position: relative;"><strong>Batch operations</strong> - Perform multiple actions in a single API call</li>
+            <li style="margin-bottom: 15px; padding-left: 25px; position: relative;"><strong>Custom endpoints</strong> - Extend the API with your own endpoints</li>
+            <li style="margin-bottom: 15px; padding-left: 25px; position: relative;"><strong>Rate limiting</strong> - Prevent abuse with configurable request limits</li>
+            <li style="margin-bottom: 15px; padding-left: 25px; position: relative;"><strong>CORS support</strong> - Cross-origin resource sharing for web applications</li>
+          </ul>
+          
+          <h4>Odoo 18 Specific Enhancements:</h4>
+          <ul style="padding-left: 20px;">
+            <li style="margin-bottom: 8px;">Utilizes Odoo 18's improved ORM performance</li>
+            <li style="margin-bottom: 8px;">Supports Odoo 18's new security features</li>
+            <li style="margin-bottom: 8px;">Optimized for Odoo 18's Python 3.10+ environment</li>
+            <li style="margin-bottom: 8px;">Leverages Odoo 18's enhanced caching mechanisms</li>
+          </ul>
+        </div>
+        
+        <!-- Installation Tab -->
+        <div id="content2" style="display: none; padding: 20px; border: 1px solid #ddd; border-top: none; background: white; border-radius: 0 0 5px 5px;">
+          <h3 style="color:#875A7B;">Installation Guide</h3>
+          <ol style="padding-left: 20px;">
+            <li style="margin-bottom: 8px;">Download the module from our repository or the Odoo App Store</li>
+            <li style="margin-bottom: 8px;">Place it in your Odoo 18 addons directory: <code style="background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-family: monospace;">/path/to/odoo18/addons/</code></li>
+            <li style="margin-bottom: 8px;">Update your app list: Go to <strong>Apps → Update Apps List</strong></li>
+            <li style="margin-bottom: 8px;">Install the <strong>REST API Module</strong> from the Apps menu</li>
+            <li style="margin-bottom: 8px;">Configure user permissions: <strong>Settings → Users & Companies → Users</strong>
+              <ul style="padding-left: 20px;">
+                <li style="margin-bottom: 8px;">Enable "API Access" for relevant users</li>
+                <li style="margin-bottom: 8px;">Set appropriate access rights for API users</li>
+              </ul>
+            </li>
+            <li style="margin-bottom: 8px;">Restart your Odoo 18 service</li>
+            <li style="margin-bottom: 8px;">Verify installation by accessing: <code style="background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-family: monospace;">https://your-odoo-domain.com/api/status</code></li>
+          </ol>
+          
+          <h4>Configuration Options:</h4>
+          <ul style="padding-left: 20px;">
+            <li style="margin-bottom: 8px;"><strong>API Rate Limiting</strong> - Configure in Settings → REST API Configuration</li>
+            <li style="margin-bottom: 8px;"><strong>CORS Settings</strong> - Define allowed origins for cross-domain requests</li>
+            <li style="margin-bottom: 8px;"><strong>Default Response Format</strong> - Choose between JSON or XML output</li>
+            <li style="margin-bottom: 8px;"><strong>Logging Level</strong> - Set verbosity of API request logging</li>
+            <li style="margin-bottom: 8px;"><strong>Token Expiration</strong> - Set JWT token validity period (default 24 hours)</li>
+          </ul>
+          
+          <h4>System Requirements:</h4>
+          <ul style="padding-left: 20px;">
+            <li style="margin-bottom: 8px;">Odoo 18.0 (latest version recommended)</li>
+            <li style="margin-bottom: 8px;">Python 3.10+</li>
+            <li style="margin-bottom: 8px;">PostgreSQL 12+</li>
+            <li style="margin-bottom: 8px;">Minimum 2GB RAM for production use</li>
+          </ul>
+        </div>
+        
+        <!-- API Documentation Tab -->
+        <div id="content3" style="display: none; padding: 20px; border: 1px solid #ddd; border-top: none; background: white; border-radius: 0 0 5px 5px;">
+          <h3 style="color:#875A7B;">API Documentation</h3>
+          <p>All API requests are made to the base URL:</p>
+          <pre style="background: #f5f5f5; padding: 15px; border: 1px solid #ddd; border-radius: 4px; overflow-x: auto;"><code>https://your-odoo-domain.com/jsonrpc</code></pre>
+          
+          <h4>Authentication:</h4>
+          <p>To authenticate, send a POST request to <code style="background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-family: monospace;">/api/login</code> with credentials:</p>
+          <pre style="background: #f5f5f5; padding: 15px; border: 1px solid #ddd; border-radius: 4px; overflow-x: auto;"><code>{
+  "jsonrpc": "2.0",
+  "method": "call",
+  "params": {
+    "db": "your_db_name",
+    "login": "api_user@example.com",
+    "password": "secure_password"
+  }
+}</code></pre>
+          <p>Successful authentication returns a JWT access token valid for 24 hours by default.</p>
+          
+          <h4>Available Endpoints:</h4>
+          <ul style="margin-left: 0; padding-left: 0;">
+            <li style="list-style: none; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #eee;">
+              <strong>POST /api/&lt;model&gt;/search</strong> - Search records
+              <p>Parameters: domain (array), limit (int), offset (int), order_by (string), fields (array)</p>
+            </li>
+            <li style="list-style: none; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #eee;">
+              <strong>GET /api/&lt;model&gt;/read</strong> - Read record by ID
+              <p>Parameters: id (int), fields (array)</p>
+            </li>
+            <li style="list-style: none; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #eee;">
+              <strong>POST /api/&lt;model&gt;/create</strong> - Create new record
+              <p>Parameters: values (object)</p>
+            </li>
+            <li style="list-style: none; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #eee;">
+              <strong>PUT /api/&lt;model&gt;/update</strong> - Update existing record
+              <p>Parameters: id (int), values (object)</p>
+            </li>
+            <li style="list-style: none; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #eee;">
+              <strong>DELETE /api/&lt;model&gt;/delete</strong> - Delete record
+              <p>Parameters: id (int)</p>
+            </li>
+            <li style="list-style: none; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #eee;">
+              <strong>POST /api/&lt;model&gt;/call_method</strong> - Call model method
+              <p>Parameters: method (string), args (array), kwargs (object)</p>
+            </li>
+          </ul>
+          
+          <h4>Error Handling:</h4>
+          <p>The API returns standard HTTP status codes with detailed error messages:</p>
+          <ul style="padding-left: 20px;">
+            <li style="margin-bottom: 8px;"><strong>400</strong> - Bad Request (invalid parameters)</li>
+            <li style="margin-bottom: 8px;"><strong>401</strong> - Unauthorized (invalid credentials)</li>
+            <li style="margin-bottom: 8px;"><strong>403</strong> - Forbidden (insufficient permissions)</li>
+            <li style="margin-bottom: 8px;"><strong>404</strong> - Not Found (resource doesn't exist)</li>
+            <li style="margin-bottom: 8px;"><strong>429</strong> - Too Many Requests (rate limit exceeded)</li>
+            <li style="margin-bottom: 8px;"><strong>500</strong> - Internal Server Error</li>
+          </ul>
+        </div>
+        
+        <!-- Postman Usage Tab -->
+        <div id="content4" style="display: none; padding: 20px; border: 1px solid #ddd; border-top: none; background: white; border-radius: 0 0 5px 5px;">
+          <h3 style="color:#875A7B;">Postman Usage</h3>
+          <p>
+            We provide a ready-to-use Postman collection specifically configured for Odoo 18's REST API. 
+            Download it from our documentation site or GitHub repository.
+          </p>
+          
+          <h4>Setup Instructions:</h4>
+          <ol style="padding-left: 20px;">
+            <li style="margin-bottom: 8px;">Import the collection into Postman</li>
+            <li style="margin-bottom: 8px;">Set environment variables:
+              <ul style="padding-left: 20px;">
+                <li style="margin-bottom: 8px;"><code style="background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-family: monospace;">base_url</code> - Your Odoo 18 instance URL</li>
+                <li style="margin-bottom: 8px;"><code style="background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-family: monospace;">db</code> - Your database name</li>
+                <li style="margin-bottom: 8px;"><code style="background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-family: monospace;">username</code> - API user email</li>
+                <li style="margin-bottom: 8px;"><code style="background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-family: monospace;">password</code> - API user password</li>
+              </ul>
+            </li>
+            <li style="margin-bottom: 8px;">Run the "Authentication" request to get your access token</li>
+            <li style="margin-bottom: 8px;">Token will automatically be set for subsequent requests</li>
+          </ol>
+          
+          <h4>Example Request:</h4>
+          <p>Search for companies with more than 10 employees:</p>
+          <pre style="background: #f5f5f5; padding: 15px; border: 1px solid #ddd; border-radius: 4px; overflow-x: auto;"><code>{
+  "jsonrpc": "2.0",
+  "method": "call",
+  "params": {
+    "domain": [
+        ["is_company", "=", true],
+        ["employee_count", ">", 10]
+    ],
+    "limit": 5,
+    "order_by": "name asc",
+    "fields": ["id", "name", "email", "phone"]
+  }
+}</code></pre>
+          
+          <h4>Example Response:</h4>
+          <pre style="background: #f5f5f5; padding: 15px; border: 1px solid #ddd; border-radius: 4px; overflow-x: auto;"><code>{
+  "jsonrpc": "2.0",
+  "id": null,
+  "result": {
+    "status": 200,
+    "message": "Success",
+    "count": 3,
+    "data": [
+      {
+        "id": 45,
+        "name": "Tech Solutions Inc.",
+        "email": "info@techsolutions.com",
+        "phone": "+1 800 123 4567"
+      },
+      {
+        "id": 78,
+        "name": "Global Enterprises",
+        "email": "contact@globalent.com",
+        "phone": "+44 20 7946 0958"
+      }
+    ]
+  }
+}</code></pre>
+        </div>
+        
+        <!-- Swagger Info Tab -->
+        <div id="content5" style="display: none; padding: 20px; border: 1px solid #ddd; border-top: none; background: white; border-radius: 0 0 5px 5px;">
+          <h3 style="color:#875A7B;">Swagger Documentation</h3>
+          <p>
+            For interactive API exploration, we provide Swagger UI documentation that's 
+            automatically generated from Odoo 18's API endpoints.
+          </p>
+          
+          <h4>Accessing Swagger UI:</h4>
+          <ol style="padding-left: 20px;">
+            <li style="margin-bottom: 8px;">Install the module in your Odoo 18 instance</li>
+            <li style="margin-bottom: 8px;">Navigate to: <code style="background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-family: monospace;">https://your-odoo-domain.com/api/swagger</code></li>
+            <li style="margin-bottom: 8px;">Authenticate using your API credentials</li>
+            <li style="margin-bottom: 8px;">Explore all available endpoints</li>
+          </ol>
+          
+          <h4>Features:</h4>
+          <ul style="padding-left: 20px;">
+            <li style="margin-bottom: 8px;">Interactive endpoint testing</li>
+            <li style="margin-bottom: 8px;">Automatic model documentation</li>
+            <li style="margin-bottom: 8px;">Example requests and responses</li>
+            <li style="margin-bottom: 8px;">Endpoint security definitions</li>
+            <li style="margin-bottom: 8px;">Downloadable OpenAPI specification</li>
+            <li style="margin-bottom: 8px;">Model schema visualization</li>
+          </ul>
+          
+          <p>
+            <strong>Note:</strong> Swagger UI is disabled in production by default. 
+            Enable it in Settings → REST API Configuration.
+          </p>
+          
+          <div style="background: #e7f4ff; border-left: 4px solid #1e88e5; padding: 15px; margin: 20px 0; border-radius: 0 4px 4px 0;">
+            <strong>💡 Tip:</strong> You can download the OpenAPI specification and import it into 
+            tools like Postman or Insomnia for advanced API testing.
+          </div>
+        </div>
+        
+        <!-- Screenshots Tab -->
+        <div id="content6" style="display: none; padding: 20px; border: 1px solid #ddd; border-top: none; background: white; border-radius: 0 0 5px 5px;">
+          <h3 style="color:#875A7B;">Module Screenshots</h3>
+          <p>Visual overview of the REST API module features and interface in Odoo 18.</p>
+          
+          <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
+            <div style="background: #e9ecef; border: 1px solid #ced4da; border-radius: 5px; padding: 15px; text-align: center;">
+              <div style="height: 180px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; background: #fff; border-radius: 4px; font-size: 14px; color: #6c757d; border: 1px dashed #ced4da;">API Configuration Settings in Odoo 18</div>
+              <div style="font-size: 14px; color: #495057; font-weight: bold;">Module Configuration</div>
+            </div>
+            
+            <div style="background: #e9ecef; border: 1px solid #ced4da; border-radius: 5px; padding: 15px; text-align: center;">
+              <div style="height: 180px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; background: #fff; border-radius: 4px; font-size: 14px; color: #6c757d; border: 1px dashed #ced4da;">API Endpoint Management</div>
+              <div style="font-size: 14px; color: #495057; font-weight: bold;">Endpoint Management</div>
+            </div>
+            
+            <div style="background: #e9ecef; border: 1px solid #ced4da; border-radius: 5px; padding: 15px; text-align: center;">
+              <div style="height: 180px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; background: #fff; border-radius: 4px; font-size: 14px; color: #6c757d; border: 1px dashed #ced4da;">API Access Logs</div>
+              <div style="font-size: 14px; color: #495057; font-weight: bold;">Access Monitoring</div>
+            </div>
+            
+            <div style="background: #e9ecef; border: 1px solid #ced4da; border-radius: 5px; padding: 15px; text-align: center;">
+              <div style="height: 180px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; background: #fff; border-radius: 4px; font-size: 14px; color: #6c757d; border: 1px dashed #ced4da;">Swagger UI Interface</div>
+              <div style="font-size: 14px; color: #495057; font-weight: bold;">Interactive Documentation</div>
+            </div>
+            
+            <div style="background: #e9ecef; border: 1px solid #ced4da; border-radius: 5px; padding: 15px; text-align: center;">
+              <div style="height: 180px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; background: #fff; border-radius: 4px; font-size: 14px; color: #6c757d; border: 1px dashed #ced4da;">Postman Collection</div>
+              <div style="font-size: 14px; color: #495057; font-weight: bold;">API Testing</div>
+            </div>
+            
+            <div style="background: #e9ecef; border: 1px solid #ced4da; border-radius: 5px; padding: 15px; text-align: center;">
+              <div style="height: 180px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; background: #fff; border-radius: 4px; font-size: 14px; color: #6c757d; border: 1px dashed #ced4da;">API Performance Dashboard</div>
+              <div style="font-size: 14px; color: #495057; font-weight: bold;">Performance Metrics</div>
+            </div>
+          </div>
+          
+          <h4>Odoo 18 Specific Screenshots:</h4>
+          <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
+            <div style="background: #e9ecef; border: 1px solid #ced4da; border-radius: 5px; padding: 15px; text-align: center;">
+              <div style="height: 180px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; background: #fff; border-radius: 4px; font-size: 14px; color: #6c757d; border: 1px dashed #ced4da;">Odoo 18 User Permissions</div>
+              <div style="font-size: 14px; color: #495057; font-weight: bold;">User Permissions</div>
+            </div>
+            
+            <div style="background: #e9ecef; border: 1px solid #ced4da; border-radius: 5px; padding: 15px; text-align: center;">
+              <div style="height: 180px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; background: #fff; border-radius: 4px; font-size: 14px; color: #6c757d; border: 1px dashed #ced4da;">Token Management</div>
+              <div style="font-size: 14px; color: #495057; font-weight: bold;">Token Administration</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECHNICAL REQUIREMENTS SECTION -->
+<section style="max-width: 900px; margin: 0 auto; padding: 20px;">
+  <div style="margin-bottom: 30px; padding: 15px 0;">
+    <h2 style="color:#875A7B; margin-bottom: 35px; text-align: center;">Technical Requirements</h2>
+    <div style="width: 100%;">
+      <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+        <tr style="background-color: #f8f9fa;">
+          <td style="width: 30%; border: 1px solid #dee2e6; padding: 12px; text-align: left;"><strong>Odoo Version</strong></td>
+          <td style="border: 1px solid #dee2e6; padding: 12px; text-align: left;">Compatible with Odoo 18.0</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid #dee2e6; padding: 12px; text-align: left;"><strong>Python Version</strong></td>
+          <td style="border: 1px solid #dee2e6; padding: 12px; text-align: left;">Python 3.10 or higher</td>
+        </tr>
+        <tr style="background-color: #f8f9fa;">
+          <td style="border: 1px solid #dee2e6; padding: 12px; text-align: left;"><strong>Database</strong></td>
+          <td style="border: 1px solid #dee2e6; padding: 12px; text-align: left;">PostgreSQL 12+</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid #dee2e6; padding: 12px; text-align: left;"><strong>Memory Requirements</strong></td>
+          <td style="border: 1px solid #dee2e6; padding: 12px; text-align: left;">Minimum 2GB RAM for production use</td>
+        </tr>
+        <tr style="background-color: #f8f9fa;">
+          <td style="border: 1px solid #dee2e6; padding: 12px; text-align: left;"><strong>Dependencies</strong></td>
+          <td style="border: 1px solid #dee2e6; padding: 12px; text-align: left;">PyJWT, requests, python-dateutil</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- SUPPORT SECTION -->
+<section style="max-width: 900px; margin: 0 auto; padding: 20px;">
+  <div style="margin-bottom: 30px; padding: 15px 0;">
+    <div style="margin-top: 30px; padding: 20px; border: 1px solid #d4edda; background: #d4edda; border-radius: 5px;">
+      <h3 style="color:#875A7B; margin-top: 0;">🛠 Support & Customization</h3>
+      <p>
+        Need custom endpoints, specialized functionality, or assistance with Odoo 18 integration?
+        Our team provides expert support and customization services.
+      </p>
+      <p>
+        <strong>Standard Support:</strong> Included with module purchase (6 months)
+      </p>
+      <p>
+        <strong>Premium Support:</strong> 24/7 emergency support with 1-hour response time
+      </p>
+      <p>
+        <strong>Contact us:</strong> support@odooapi.com | +1 (800) API-HELP
+      </p>
+      <p>
+        <strong>Documentation:</strong> <a href="https://docs.odooapi.com" style="color: #155724; text-decoration: underline;">docs.odooapi.com</a>
+      </p>
+      <p>
+        <strong>GitHub:</strong> <a href="https://github.com/odoo-rest-api" style="color: #155724; text-decoration: underline;">github.com/odoo-rest-api</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- FOOTER SECTION -->
+<section style="max-width: 900px; margin: 0 auto; padding: 20px; background-color: #f5f5f5;">
+  <div style="margin-bottom: 30px; padding: 15px 0; text-align: center; padding-top: 20px; border-top: 1px solid #ddd;">
+    <p style="color: #6c757d; font-size: 14px; margin-bottom: 5px;">Odoo 18 REST API Module v2.1.0 | © 2025 API Solutions Inc.</p>
+    <p style="color: #6c757d; font-size: 14px;">Exclusively for Odoo 18 | MIT License</p>
+  </div>
+</section>
+
+<style>
+  /* Tab switching without JavaScript */
+  #tab1:checked ~ #content1,
+  #tab2:checked ~ #content2,
+  #tab3:checked ~ #content3,
+  #tab4:checked ~ #content4,
+  #tab5:checked ~ #content5,
+  #tab6:checked ~ #content6 {
+    display: block;
+  }
+  
+  /* Hide other tabs when one is selected */
+  #content1, #content2, #content3, #content4, #content5, #content6 {
+    display: none;
+  }
+  
+  /* Highlight active tab */
+  #tab1:checked ~ ul li label[for="tab1"],
+  #tab2:checked ~ ul li label[for="tab2"],
+  #tab3:checked ~ ul li label[for="tab3"],
+  #tab4:checked ~ ul li label[for="tab4"],
+  #tab5:checked ~ ul li label[for="tab5"],
+  #tab6:checked ~ ul li label[for="tab6"] {
+    background: white;
+    border-bottom: 2px solid white;
+    margin-bottom: -2px;
+    font-weight: bold;
+    color: #875A7B;
+  }
+</style>
+
+</body>
+</html>
