@@ -37,50 +37,68 @@
   <div style="margin-bottom: 30px; padding: 15px 0;">
     <h2 style="color:#875A7B; margin-bottom: 35px; text-align: center;">Key Features</h2>
     
-    <!-- Updated flexbox to use more explicit width controls for better Odoo App Store compatibility -->
-    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; margin: 30px 0;">
-      <!-- Odoo 18 Exclusive -->
-      <div style="width: 48%; min-width: 280px; margin-bottom: 20px; background: white; border-radius: 8px; padding: 25px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-        <div style="font-size: 36px; color: #875a7b; margin-bottom: 15px;">★</div>
-        <h3 style="font-size: 18px; color: #875a7b; margin-bottom: 15px;">Odoo 18 Exclusive</h3>
-        <p style="color: #555; line-height: 1.5;">Built specifically for Odoo 18's architecture with support for all new features and performance improvements.</p>
-      </div>
+    <!-- Replaced flexbox with table-based layout for better Odoo App Store compatibility -->
+    <table style="width: 100%; border-collapse: separate; border-spacing: 15px;">
+      <tr>
+        <!-- Odoo 18 Exclusive -->
+        <td style="width: 50%; vertical-align: top;">
+          <div style="background: white; border-radius: 8px; padding: 25px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); height: 100%;">
+            <div style="font-size: 36px; color: #875a7b; margin-bottom: 15px;">★</div>
+            <h3 style="font-size: 18px; color: #875a7b; margin-bottom: 15px;">Odoo 18 Exclusive</h3>
+            <p style="color: #555; line-height: 1.5;">Built specifically for Odoo 18's architecture with support for all new features and performance improvements.</p>
+          </div>
+        </td>
+        
+        <!-- Secure Authentication -->
+        <td style="width: 50%; vertical-align: top;">
+          <div style="background: white; border-radius: 8px; padding: 25px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); height: 100%;">
+            <div style="font-size: 36px; color: #875a7b; margin-bottom: 15px;">🔒</div>
+            <h3 style="font-size: 18px; color: #875a7b; margin-bottom: 15px;">Secure Authentication</h3>
+            <p style="color: #555; line-height: 1.5;">JWT token-based authentication with user-level permissions and configurable expiration.</p>
+          </div>
+        </td>
+      </tr>
       
-      <!-- Secure Authentication -->
-      <div style="width: 48%; min-width: 280px; margin-bottom: 20px; background: white; border-radius: 8px; padding: 25px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-        <div style="font-size: 36px; color: #875a7b; margin-bottom: 15px;">🔒</div>
-        <h3 style="font-size: 18px; color: #875a7b; margin-bottom: 15px;">Secure Authentication</h3>
-        <p style="color: #555; line-height: 1.5;">JWT token-based authentication with user-level permissions and configurable expiration.</p>
-      </div>
+      <tr>
+        <!-- Full CRUD Operations -->
+        <td style="width: 50%; vertical-align: top;">
+          <div style="background: white; border-radius: 8px; padding: 25px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); height: 100%;">
+            <div style="font-size: 36px; color: #875a7b; margin-bottom: 15px;">🗄️</div>
+            <h3 style="font-size: 18px; color: #875a7b; margin-bottom: 15px;">Full CRUD Operations</h3>
+            <p style="color: #555; line-height: 1.5;">Create, Read, Update, Delete for any Odoo model with comprehensive field support.</p>
+          </div>
+        </td>
+        
+        <!-- Advanced Search -->
+        <td style="width: 50%; vertical-align: top;">
+          <div style="background: white; border-radius: 8px; padding: 25px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); height: 100%;">
+            <div style="font-size: 36px; color: #875a7b; margin-bottom: 15px;">🔍</div>
+            <h3 style="font-size: 18px; color: #875a7b; margin-bottom: 15px;">Advanced Search</h3>
+            <p style="color: #555; line-height: 1.5;">Filter records with complex domain filters, sorting, and field selection.</p>
+          </div>
+        </td>
+      </tr>
       
-      <!-- Full CRUD Operations -->
-      <div style="width: 48%; min-width: 280px; margin-bottom: 20px; background: white; border-radius: 8px; padding: 25px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-        <div style="font-size: 36px; color: #875a7b; margin-bottom: 15px;">🗄️</div>
-        <h3 style="font-size: 18px; color: #875a7b; margin-bottom: 15px;">Full CRUD Operations</h3>
-        <p style="color: #555; line-height: 1.5;">Create, Read, Update, Delete for any Odoo model with comprehensive field support.</p>
-      </div>
-      
-      <!-- Advanced Search -->
-      <div style="width: 48%; min-width: 280px; margin-bottom: 20px; background: white; border-radius: 8px; padding: 25px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-        <div style="font-size: 36px; color: #875a7b; margin-bottom: 15px;">🔍</div>
-        <h3 style="font-size: 18px; color: #875a7b; margin-bottom: 15px;">Advanced Search</h3>
-        <p style="color: #555; line-height: 1.5;">Filter records with complex domain filters, sorting, and field selection.</p>
-      </div>
-      
-      <!-- Batch Operations -->
-      <div style="width: 48%; min-width: 280px; margin-bottom: 20px; background: white; border-radius: 8px; padding: 25px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-        <div style="font-size: 36px; color: #875a7b; margin-bottom: 15px;">⚙️</div>
-        <h3 style="font-size: 18px; color: #875a7b; margin-bottom: 15px;">Batch Operations</h3>
-        <p style="color: #555; line-height: 1.5;">Perform multiple actions in a single API call for improved efficiency.</p>
-      </div>
-      
-      <!-- Custom Endpoints -->
-      <div style="width: 48%; min-width: 280px; margin-bottom: 20px; background: white; border-radius: 8px; padding: 25px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-        <div style="font-size: 36px; color: #875a7b; margin-bottom: 15px;">💻</div>
-        <h3 style="font-size: 18px; color: #875a7b; margin-bottom: 15px;">Custom Endpoints</h3>
-        <p style="color: #555; line-height: 1.5;">Extend the API with your own endpoints for specialized functionality.</p>
-      </div>
-    </div>
+      <tr>
+        <!-- Batch Operations -->
+        <td style="width: 50%; vertical-align: top;">
+          <div style="background: white; border-radius: 8px; padding: 25px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); height: 100%;">
+            <div style="font-size: 36px; color: #875a7b; margin-bottom: 15px;">⚙️</div>
+            <h3 style="font-size: 18px; color: #875a7b; margin-bottom: 15px;">Batch Operations</h3>
+            <p style="color: #555; line-height: 1.5;">Perform multiple actions in a single API call for improved efficiency.</p>
+          </div>
+        </td>
+        
+        <!-- Custom Endpoints -->
+        <td style="width: 50%; vertical-align: top;">
+          <div style="background: white; border-radius: 8px; padding: 25px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); height: 100%;">
+            <div style="font-size: 36px; color: #875a7b; margin-bottom: 15px;">💻</div>
+            <h3 style="font-size: 18px; color: #875a7b; margin-bottom: 15px;">Custom Endpoints</h3>
+            <p style="color: #555; line-height: 1.5;">Extend the API with your own endpoints for specialized functionality.</p>
+          </div>
+        </td>
+      </tr>
+    </table>
   </div>
 </section>
 
