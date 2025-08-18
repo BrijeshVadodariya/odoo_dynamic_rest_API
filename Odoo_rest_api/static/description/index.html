@@ -84,43 +84,36 @@
 </section>
 
 <!-- TAB SYSTEM SECTION -->
-<section style="max-width: 900px; margin: 0 auto; padding: 20px; background-color: #f5f5f5;">
+<section class="module-docs" style="max-width: 900px; margin: 0 auto; padding: 20px; background-color: #f5f5f5;">
   <div style="margin-bottom: 30px; padding: 15px 0;">
     <h2 style="color:#875A7B; margin-bottom: 35px; text-align: center;">Module Documentation</h2>
     
-    <div style="width: 100%;">
-      <input id="tab1" type="radio" name="tabs" checked style="display: none;">
-      <input id="tab2" type="radio" name="tabs" style="display: none;">
-      <input id="tab3" type="radio" name="tabs" style="display: none;">
-      <input id="tab4" type="radio" name="tabs" style="display: none;">
-      <input id="tab5" type="radio" name="tabs" style="display: none;">
-      <input id="tab6" type="radio" name="tabs" style="display: none;">
-      
-      
+    <div class="tab-container" style="width: 100%;">
+      <!-- Tab labels -->
       <ul style="display: flex; list-style: none; padding: 0; margin: 0 0 20px; border-bottom: 2px solid #ddd; overflow-x: auto; flex-wrap: wrap;">
         <li style="margin-right: 5px; margin-bottom: 5px;">
-          <label for="tab1" style="display: block; padding: 10px 15px; background: #f7f7f7; border: 1px solid #ddd; border-bottom: none; border-radius: 5px 5px 0 0; cursor: pointer; position: relative; top: 2px; white-space: nowrap;">Overview</label>
+          <button class="tab-button active" data-tab="content1" style="padding: 10px 15px; background: white; border: 1px solid #ddd; border-bottom: none; border-radius: 5px 5px 0 0; cursor: pointer; position: relative; top: 2px; white-space: nowrap; font-weight: bold; color: #875A7B;">Overview</button>
         </li>
         <li style="margin-right: 5px; margin-bottom: 5px;">
-          <label for="tab2" style="display: block; padding: 10px 15px; background: #f7f7f7; border: 1px solid #ddd; border-bottom: none; border-radius: 5px 5px 0 0; cursor: pointer; position: relative; top: 2px; white-space: nowrap;">Installation</label>
+          <button class="tab-button" data-tab="content2" style="padding: 10px 15px; background: #f7f7f7; border: 1px solid #ddd; border-bottom: none; border-radius: 5px 5px 0 0; cursor: pointer; position: relative; top: 2px; white-space: nowrap;">Installation</button>
         </li>
         <li style="margin-right: 5px; margin-bottom: 5px;">
-          <label for="tab3" style="display: block; padding: 10px 15px; background: #f7f7f7; border: 1px solid #ddd; border-bottom: none; border-radius: 5px 5px 0 0; cursor: pointer; position: relative; top: 2px; white-space: nowrap;">API Docs</label>
+          <button class="tab-button" data-tab="content3" style="padding: 10px 15px; background: #f7f7f7; border: 1px solid #ddd; border-bottom: none; border-radius: 5px 5px 0 0; cursor: pointer; position: relative; top: 2px; white-space: nowrap;">API Docs</button>
         </li>
         <li style="margin-right: 5px; margin-bottom: 5px;">
-          <label for="tab4" style="display: block; padding: 10px 15px; background: #f7f7f7; border: 1px solid #ddd; border-bottom: none; border-radius: 5px 5px 0 0; cursor: pointer; position: relative; top: 2px; white-space: nowrap;">Postman</label>
+          <button class="tab-button" data-tab="content4" style="padding: 10px 15px; background: #f7f7f7; border: 1px solid #ddd; border-bottom: none; border-radius: 5px 5px 0 0; cursor: pointer; position: relative; top: 2px; white-space: nowrap;">Postman</button>
         </li>
         <li style="margin-right: 5px; margin-bottom: 5px;">
-          <label for="tab5" style="display: block; padding: 10px 15px; background: #f7f7f7; border: 1px solid #ddd; border-bottom: none; border-radius: 5px 5px 0 0; cursor: pointer; position: relative; top: 2px; white-space: nowrap;">Swagger</label>
+          <button class="tab-button" data-tab="content5" style="padding: 10px 15px; background: #f7f7f7; border: 1px solid #ddd; border-bottom: none; border-radius: 5px 5px 0 0; cursor: pointer; position: relative; top: 2px; white-space: nowrap;">Swagger</button>
         </li>
         <li style="margin-right: 5px; margin-bottom: 5px;">
-          <label for="tab6" style="display: block; padding: 10px 15px; background: #f7f7f7; border: 1px solid #ddd; border-bottom: none; border-radius: 5px 5px 0 0; cursor: pointer; position: relative; top: 2px; white-space: nowrap;">Screenshots</label>
+          <button class="tab-button" data-tab="content6" style="padding: 10px 15px; background: #f7f7f7; border: 1px solid #ddd; border-bottom: none; border-radius: 5px 5px 0 0; cursor: pointer; position: relative; top: 2px; white-space: nowrap;">Screenshots</button>
         </li>
       </ul>
       
-      <div style="position: relative;">
-        <!-- Overview Tab -->
-        <div id="content1" style="display: block; padding: 20px; border: 1px solid #ddd; border-top: none; background: white; border-radius: 0 0 5px 5px;">
+      <!-- Tab content -->
+      <div class="tab-content">
+        <div id="content1" class="tab-pane" style="display: block; padding: 20px; border: 1px solid #ddd; border-top: none; background: white; border-radius: 0 0 5px 5px;">
           <h3 style="color:#875A7B;">Comprehensive REST API for Odoo 18</h3>
           
           <div style="background: #e7f4ff; border-left: 4px solid #1e88e5; padding: 15px; margin: 20px 0; border-radius: 0 4px 4px 0;">
@@ -150,8 +143,7 @@
           </ul>
         </div>
         
-        <!-- Installation Tab -->
-        <div id="content2" style="display: none; padding: 20px; border: 1px solid #ddd; border-top: none; background: white; border-radius: 0 0 5px 5px;">
+        <div id="content2" class="tab-pane" style="display: none; padding: 20px; border: 1px solid #ddd; border-top: none; background: white; border-radius: 0 0 5px 5px;">
           <h3 style="color:#875A7B;">Installation Guide</h3>
           <ol style="padding-left: 20px;">
             <li style="margin-bottom: 8px;">Download the module from our repository or the Odoo App Store</li>
@@ -186,8 +178,7 @@
           </ul>
         </div>
         
-        <!-- API Documentation Tab -->
-        <div id="content3" style="display: none; padding: 20px; border: 1px solid #ddd; border-top: none; background: white; border-radius: 0 0 5px 5px;">
+        <div id="content3" class="tab-pane" style="display: none; padding: 20px; border: 1px solid #ddd; border-top: none; background: white; border-radius: 0 0 5px 5px;">
           <h3 style="color:#875A7B;">API Documentation</h3>
           <p>All API requests are made to the base URL:</p>
           <pre style="background: #f5f5f5; padding: 15px; border: 1px solid #ddd; border-radius: 4px; overflow-x: auto;"><code>https://your-odoo-domain.com/jsonrpc</code></pre>
@@ -245,8 +236,7 @@
           </ul>
         </div>
         
-        <!-- Postman Usage Tab -->
-        <div id="content4" style="display: none; padding: 20px; border: 1px solid #ddd; border-top: none; background: white; border-radius: 0 0 5px 5px;">
+        <div id="content4" class="tab-pane" style="display: none; padding: 20px; border: 1px solid #ddd; border-top: none; background: white; border-radius: 0 0 5px 5px;">
           <h3 style="color:#875A7B;">Postman Usage</h3>
           <p>
             We provide a ready-to-use Postman collection specifically configured for Odoo 18's REST API. 
@@ -254,7 +244,7 @@
           </p>
           
           <h4>Setup Instructions:</h4>
-          <ol style="padding-left: 20px;">
+          <ul style="padding-left: 20px;">
             <li style="margin-bottom: 8px;">Import the collection into Postman</li>
             <li style="margin-bottom: 8px;">Set environment variables:
               <ul style="padding-left: 20px;">
@@ -266,7 +256,7 @@
             </li>
             <li style="margin-bottom: 8px;">Run the "Authentication" request to get your access token</li>
             <li style="margin-bottom: 8px;">Token will automatically be set for subsequent requests</li>
-          </ol>
+          </ul>
           
           <h4>Example Request:</h4>
           <p>Search for companies with more than 10 employees:</p>
@@ -310,8 +300,7 @@
 }</code></pre>
         </div>
         
-        <!-- Swagger Info Tab -->
-        <div id="content5" style="display: none; padding: 20px; border: 1px solid #ddd; border-top: none; background: white; border-radius: 0 0 5px 5px;">
+        <div id="content5" class="tab-pane" style="display: none; padding: 20px; border: 1px solid #ddd; border-top: none; background: white; border-radius: 0 0 5px 5px;">
           <h3 style="color:#875A7B;">Swagger Documentation</h3>
           <p>
             For interactive API exploration, we provide Swagger UI documentation that's 
@@ -319,12 +308,12 @@
           </p>
           
           <h4>Accessing Swagger UI:</h4>
-          <ol style="padding-left: 20px;">
+          <ul style="padding-left: 20px;">
             <li style="margin-bottom: 8px;">Install the module in your Odoo 18 instance</li>
             <li style="margin-bottom: 8px;">Navigate to: <code style="background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-family: monospace;">https://your-odoo-domain.com/api/swagger</code></li>
             <li style="margin-bottom: 8px;">Authenticate using your API credentials</li>
             <li style="margin-bottom: 8px;">Explore all available endpoints</li>
-          </ol>
+          </ul>
           
           <h4>Features:</h4>
           <ul style="padding-left: 20px;">
@@ -347,8 +336,7 @@
           </div>
         </div>
         
-        <!-- Screenshots Tab -->
-        <div id="content6" style="display: none; padding: 20px; border: 1px solid #ddd; border-top: none; background: white; border-radius: 0 0 5px 5px;">
+        <div id="content6" class="tab-pane" style="display: none; padding: 20px; border: 1px solid #ddd; border-top: none; background: white; border-radius: 0 0 5px 5px;">
           <h3 style="color:#875A7B;">Module Screenshots</h3>
           <p>Visual overview of the REST API module features and interface in Odoo 18.</p>
           
@@ -461,8 +449,6 @@
   </div>
 </section>
 
-
-
 <!-- FOOTER SECTION -->
 <section style="max-width: 900px; margin: 0 auto; padding: 20px; background-color: #f5f5f5;">
   <div style="margin-bottom: 30px; padding: 15px 0; text-align: center; padding-top: 20px; border-top: 1px solid #ddd;">
@@ -472,28 +458,29 @@
 </section>
 
 <style>
-  /* Tab switching without JavaScript */
-  #tab1:checked ~ #content1,
-  #tab2:checked ~ #content2,
-  #tab3:checked ~ #content3,
-  #tab4:checked ~ #content4,
-  #tab5:checked ~ #content5,
-  #tab6:checked ~ #content6 {
-    display: block;
+  .module-docs .tab-container .tab-content .tab-pane {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-top: none;
+    background: white;
+    border-radius: 0 0 5px 5px;
   }
-  
-  /* Hide other tabs when one is selected */
-  #content1, #content2, #content3, #content4, #content5, #content6 {
-    display: none;
+
+  .module-docs .tab-container .tab-button {
+    padding: 10px 15px;
+    background: #f7f7f7;
+    border: 1px solid #ddd;
+    border-bottom: none;
+    border-radius: 5px 5px 0 0;
+    cursor: pointer;
+    position: relative;
+    top: 2px;
+    white-space: nowrap;
+    font-size: 16px;
+    color: #333;
   }
-  
-  /* Highlight active tab */
-  #tab1:checked ~ ul li label[for="tab1"],
-  #tab2:checked ~ ul li label[for="tab2"],
-  #tab3:checked ~ ul li label[for="tab3"],
-  #tab4:checked ~ ul li label[for="tab4"],
-  #tab5:checked ~ ul li label[for="tab5"],
-  #tab6:checked ~ ul li label[for="tab6"] {
+
+  .module-docs .tab-container .tab-button.active {
     background: white;
     border-bottom: 2px solid white;
     margin-bottom: -2px;
@@ -501,6 +488,30 @@
     color: #875A7B;
   }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const tabButtons = document.querySelectorAll('.module-docs .tab-container .tab-button');
+    const tabPanes = document.querySelectorAll('.module-docs .tab-container .tab-content .tab-pane');
+
+    tabButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        // Remove active class from all buttons
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        // Add active class to clicked button
+        this.classList.add('active');
+
+        // Hide all tab panes
+        tabPanes.forEach(pane => pane.style.display = 'none');
+        // Show the selected tab pane
+        const targetPane = document.querySelector(`#${this.getAttribute('data-tab')}`);
+        if (targetPane) {
+          targetPane.style.display = 'block';
+        }
+      });
+    });
+  });
+</script>
 
 </body>
 </html>
